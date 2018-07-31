@@ -1,9 +1,13 @@
 # GeneralAdapter
 RecycleView适配器的封装，标准的适配器，和侧滑删除，拖拽排序的适配器。不用再频繁的去创建viewHoldr，也不用去写接口实现点击事件，只需继承对应的适配器，然后三部曲就可以了
+
 #添加依赖
 `compile 'com.lee:generaladapter:1.1.0'`
+
 #基本使用
+
 ##普通效果
+
 - 新建一个Adapter 继承 BaseRecyclerViewAdapter.
 - 三部曲
 ```
