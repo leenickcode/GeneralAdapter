@@ -103,7 +103,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Un
      *
      * @param helper
      */
-    private void setItemChildListener(UniversalViewHolder helper, int viewType) {
+    public void setItemChildListener(UniversalViewHolder helper, int viewType) {
     }
 
     /**

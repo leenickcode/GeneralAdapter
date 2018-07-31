@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.lee.mylibrary.slide.DefaultItemToucHleper;
 import com.lee.mylibrary.slide.ItemTouchHelperCallback;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
 
 public class SlideActivity extends AppCompatActivity {
     RecyclerView recyclerView;
-    MyAdapter myAdapter;
+    SlideAdapter slideAdapter;
     ArrayList<String> arrayList;
 
     @Override
@@ -28,16 +27,16 @@ public class SlideActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slide);
         recyclerView = findViewById(R.id.rv_slide);
-        myAdapter = new MyAdapter(this, R.layout.item);
+        slideAdapter = new SlideAdapter(this, R.layout.item);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         ItemTouchHelperCallback callback = new ItemTouchHelperCallback();
         //一 继承SlideRecycleViewAdapter 设置监听器。  绑定RecycleView
-        callback.setOnItemTouchCallbackListener(myAdapter);
+        callback.setOnItemTouchCallbackListener(slideAdapter);
         ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
         touchHelper.attachToRecyclerView(recyclerView);
-        recyclerView.setAdapter(myAdapter);
+        recyclerView.setAdapter(slideAdapter);
         initData();
-        myAdapter.setData(arrayList);
+        slideAdapter.setData(arrayList);
     }
 
     private void initData() {

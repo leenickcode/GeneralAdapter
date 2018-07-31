@@ -12,13 +12,11 @@ import com.lee.mylibrary.UniversalViewHolder;
  *
  * @author nick
  */
-public class MyAdapter extends SlideRecycleViewAdapter<String> {
-    private static final String TAG = "MyAdapter";
-    public MyAdapter(Context mContext, int mDefaultItemLayoutId) {
+public class SlideAdapter extends SlideRecycleViewAdapter<String> {
+    private static final String TAG = "SlideAdapter";
+    public SlideAdapter(Context mContext, int mDefaultItemLayoutId) {
         super(mContext, mDefaultItemLayoutId);
     }
-
-
 
     @Override
     protected void bindData(UniversalViewHolder holder, int position, String bean) {
