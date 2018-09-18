@@ -78,7 +78,9 @@ public class ItemTouchHelperCallback extends ItemTouchHelper.Callback {
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         RecyclerView.LayoutManager layoutManager=recyclerView.getLayoutManager();
         if (layoutManager instanceof GridLayoutManager){
-
+            int dragFlag=ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT|ItemTouchHelper.DOWN|ItemTouchHelper.UP;
+            int swipeFlag=0;
+            return makeMovementFlags(dragFlag,swipeFlag);
         }else if (layoutManager instanceof LinearLayoutManager){
             int orientation=((LinearLayoutManager) layoutManager).getOrientation();
             if (orientation==LinearLayoutManager.HORIZONTAL){

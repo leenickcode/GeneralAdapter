@@ -25,4 +25,9 @@ public class TestAdapter extends BaseRecyclerViewAdapter<String> {
     protected void bindData(UniversalViewHolder holder, int position, String bean) {
         holder.getTextView(R.id.textView).setText(bean);
     }
+
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
 }

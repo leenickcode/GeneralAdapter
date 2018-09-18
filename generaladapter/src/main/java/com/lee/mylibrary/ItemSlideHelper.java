@@ -175,7 +175,6 @@ public class ItemSlideHelper implements RecyclerView.OnItemTouchListener, Gestur
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 //RecyclerView 不会转发这个Down事件
-
                 break;
             case MotionEvent.ACTION_MOVE:
                 int deltaX = (int) (mLastX - e.getX());

@@ -39,7 +39,7 @@ publish {
     userOrg = 'lixianzhong'
     groupId = 'com.lee'
     artifactId = 'generaladapter'
-    publishVersion = '1.1.0'
+    publishVersion = '1.1.2'
     desc = 'Oh hi, this is a nice description for a project, right?'
-    website = 'https://github.com/hyman/generaladapter'
+    website = 'https://github.com/nicklxz/GeneralAdapter'
 }

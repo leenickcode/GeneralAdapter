@@ -2,6 +2,7 @@ package com.lee.mylibrary;
 
 import android.support.v4.util.SparseArrayCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import android.widget.TextView;
  */
 
 public class UniversalViewHolder extends RecyclerView.ViewHolder {
+    private static final String TAG = "UniversalViewHolder";
     /**
      * 控件的容器，，，效率上不如HashMap（一个是二分法，一个是hash算法）,但是节约内存。
      */
@@ -33,7 +35,7 @@ public class UniversalViewHolder extends RecyclerView.ViewHolder {
      * @param viewId 控件Id
      * @return 控件
      */
-    private  <T extends View> T getView(int viewId) {
+    public   <T extends View> T getView(int viewId) {
         View view = mViews.get(viewId);
         if (view == null) {
             view = itemView.findViewById(viewId);
@@ -41,6 +43,7 @@ public class UniversalViewHolder extends RecyclerView.ViewHolder {
         }
         return (T) view;
     }
+
 
     /**
      * 获取 ImageView
@@ -74,6 +77,7 @@ public class UniversalViewHolder extends RecyclerView.ViewHolder {
                 @Override
                 public void onClick(View v) {
                     if (itemClickListener != null) {
+                        Log.e(TAG, "onClick: "+getAdapterPosition() );
                         itemClickListener.onClick(getAdapterPosition(), v, null);
                     }
                 }
